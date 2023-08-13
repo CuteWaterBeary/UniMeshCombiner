@@ -10,11 +10,11 @@ namespace UniMeshCombiner
         private DefaultAsset _exportDirectory = null;
         private GameObject _combineTarget = null;
         private bool _exportMesh;
-        
-        [MenuItem("Window/UniMeshCombiner")]
+
+        [MenuItem("Mesh+Bones/Combine/Combine Static Meshes .umc.")]
         static void Open()
         {
-            GetWindow<UniMeshCombinerWindow>("UniMeshCombiner").Show();
+            GetWindow<UniMeshCombinerWindow>("Combine Static Meshes").Show();
         }
 
         void OnGUI()
@@ -66,7 +66,7 @@ namespace UniMeshCombiner
                     combineMeshInstanceDictionary[material].Add(combineInstance);
                 }
             }
-            
+
             _combineTarget.SetActive(false);
 
             foreach (var kvp in combineMeshInstanceDictionary)
